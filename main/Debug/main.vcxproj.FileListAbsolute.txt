@@ -1,0 +1,2 @@
+C:\Users\brett\source\repos\monster-battles\main\Debug\main.exe
+C:\Users\brett\source\repos\monster-battles\main\Debug\main.pdb
