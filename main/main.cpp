@@ -3,7 +3,7 @@
 
 int main()
 {
-	Weapon sword{ Weapon::Type::sword };
-	sword.print();
+	Weapon spear{ Weapon::Type::spear };
+	spear.print();
 	return 0;
 }

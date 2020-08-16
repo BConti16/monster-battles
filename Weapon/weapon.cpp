@@ -1,64 +1,41 @@
 #include "weapon.h"
 #include<iostream>
 
-void Weapon::initDamage()
+//Initializes Weapon class' members
+void Weapon::init()
 {
 	switch (m_type)
 	{
 	case Type::spear:
 		m_damage = 62.0;
-		break;
-	case Type::sword:
-		m_damage = 75.0;
-		break;
-	case Type::claws:
-		m_damage = 30.0;
-		break;
-	case Type::axe:
-		m_damage = 85.0;
-		break;
-	case Type::club:
-		m_damage = 108.0;
-		break;
-	case Type::flail:
-		m_damage = 92.0;
-		break;
-	default:
-		m_damage = 0.0;
-		break;
-	}
-}
-
-void Weapon::initAttackSpeed()
-{
-	switch (m_type)
-	{
-	case Type::spear:
 		m_attackspeed = 0.61;
 		break;
 	case Type::sword:
+		m_damage = 75.0;
 		m_attackspeed = 0.75;
 		break;
 	case Type::claws:
+		m_damage = 30.0;
 		m_attackspeed = 0.32;
 		break;
 	case Type::axe:
+		m_damage = 85.0;
 		m_attackspeed = 0.93;
 		break;
 	case Type::club:
+		m_damage = 108.0;
 		m_attackspeed = 1.2;
 		break;
 	case Type::flail:
+		m_damage = 92.0;
 		m_attackspeed = 1.0;
 		break;
 	default:
+		m_damage = 0.0;
 		m_attackspeed = 0.0;
 		break;
 	}
-}
 
-void Weapon::initDPS()
-{
 	m_dps = m_damage / m_attackspeed;
 }
 

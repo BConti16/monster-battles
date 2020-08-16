@@ -25,15 +25,11 @@ private:
 public:
 	Weapon(Type type) : m_type{ type }
 	{
-		initDamage();
-		initAttackSpeed();
-		initDPS();
+		init();
 	}
 	
 private:
-	void initDamage();
-	void initAttackSpeed();
-	void initDPS();
+	void init();
 
 public:
 	const double& damage() const;
