@@ -36,7 +36,7 @@ public:
 	const double attackspeed() const;
 	const double dps() const;
 
-	const std::string& getWeaponName() const;
+	const std::string getWeaponName() const;
 	void print() const;
 };
 

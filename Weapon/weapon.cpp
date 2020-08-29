@@ -61,7 +61,7 @@ const double Weapon::dps() const
 	return m_dps;
 }
 
-const std::string& Weapon::getWeaponName() const
+const std::string Weapon::getWeaponName() const
 {
 	switch (m_type)
 	{
@@ -82,6 +82,7 @@ const std::string& Weapon::getWeaponName() const
 	}
 }
 
+//Prints the weapon characteristics to the screen
 void Weapon::print() const
 {
 	std::cout << "Type: " << getWeaponName() << ", Damage: " << m_damage << ", " << "Attack Speed: " << m_attackspeed << ", "
