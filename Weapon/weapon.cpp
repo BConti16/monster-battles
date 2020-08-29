@@ -36,7 +36,14 @@ void Weapon::init()
 		break;
 	}
 
-	m_dps = m_damage / m_attackspeed;
+	if (m_attackspeed == 0)
+	{
+		m_dps = m_damage / (m_attackspeed + 1);
+	}
+	else
+	{
+		m_dps = m_damage / m_attackspeed;
+	}
 }
 
 const double Weapon::damage() const
