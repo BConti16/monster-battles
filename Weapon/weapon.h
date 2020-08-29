@@ -32,11 +32,11 @@ private:
 	void init();
 
 public:
-	const double& damage() const;
-	const double& attackspeed() const;
-	const double& dps() const;
+	const double damage() const;
+	const double attackspeed() const;
+	const double dps() const;
 
-	const std::string getWeaponName() const;
+	const std::string& getWeaponName() const;
 	void print() const;
 };
 

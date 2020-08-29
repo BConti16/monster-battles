@@ -1,2 +1,10 @@
-﻿  main.cpp
+﻿  weapon.cpp
+C:\Users\brett\source\repos\monster-battles\Weapon\weapon.cpp(62): warning C4172: returning address of local variable or temporary
+C:\Users\brett\source\repos\monster-battles\Weapon\weapon.cpp(64): warning C4172: returning address of local variable or temporary
+C:\Users\brett\source\repos\monster-battles\Weapon\weapon.cpp(66): warning C4172: returning address of local variable or temporary
+C:\Users\brett\source\repos\monster-battles\Weapon\weapon.cpp(68): warning C4172: returning address of local variable or temporary
+C:\Users\brett\source\repos\monster-battles\Weapon\weapon.cpp(70): warning C4172: returning address of local variable or temporary
+C:\Users\brett\source\repos\monster-battles\Weapon\weapon.cpp(72): warning C4172: returning address of local variable or temporary
+C:\Users\brett\source\repos\monster-battles\Weapon\weapon.cpp(74): warning C4172: returning address of local variable or temporary
+  LINK : C:\Users\brett\source\repos\monster-battles\main\Debug\main.exe not found or not built by the last incremental link; performing full link
   main.vcxproj -> C:\Users\brett\source\repos\monster-battles\main\Debug\main.exe

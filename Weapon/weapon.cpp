@@ -39,22 +39,22 @@ void Weapon::init()
 	m_dps = m_damage / m_attackspeed;
 }
 
-const double& Weapon::damage() const
+const double Weapon::damage() const
 {
 	return m_damage;
 }
 
-const double& Weapon::attackspeed() const
+const double Weapon::attackspeed() const
 {
 	return m_attackspeed;
 }
 
-const double& Weapon::dps() const
+const double Weapon::dps() const
 {
 	return m_dps;
 }
 
-const std::string Weapon::getWeaponName() const
+const std::string& Weapon::getWeaponName() const
 {
 	switch (m_type)
 	{
