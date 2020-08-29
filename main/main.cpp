@@ -3,7 +3,9 @@
 
 int main()
 {
-	Weapon spear{ Weapon::Type::spear };
-	spear.print();
+	Weapon club{ Weapon::Type::club };
+	std::cout << club.getWeaponName();
+	club.print();
+
 	return 0;
 }
