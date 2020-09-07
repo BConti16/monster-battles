@@ -2,7 +2,7 @@
 #include<iostream>
 
 //Returns the monster's type as a string for printing
-const std::string Monster::getName() const
+const std::string Monster::getTypeString() const
 {
 	switch (m_type)
 	{
@@ -21,6 +21,12 @@ const std::string Monster::getName() const
 	}
 }
 
+//Returns the monster's name
+const std::string& Monster::getName() const
+{
+	return m_name;
+}
+
 //Returns the monster's current health points (hp)
 const double Monster::hp() const
 {
@@ -30,7 +36,7 @@ const double Monster::hp() const
 //Prints the monster's traits to the console
 void Monster::print() const
 {
-	std::cout << getName() << ": Health - " << m_hp << ", Weapon - " << m_weapon.getWeaponName() << ", DPS - " << m_weapon.dps() << '\n';
+	std::cout << getName() << " the " << getTypeString() << ": Health - " << m_hp << ", Weapon - " << m_weapon.getWeaponName() << ", DPS - " << m_weapon.dps() << '\n';
 }
 
 //Reduces the monster's health by the amount specified in the argument

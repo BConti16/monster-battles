@@ -20,10 +20,11 @@ public:
 private:
 	Type m_type;
 	Weapon m_weapon;
+	std::string m_name;
 	double m_hp;
 
 public:
-	Monster(const Type& type, const Weapon::Type& weapon, double hp) : m_type{ type }, m_weapon{ Weapon(weapon) }
+	Monster(const Type& type, const Weapon::Type& weapon, const std::string& name, double hp) : m_type{ type }, m_weapon{ Weapon(weapon) }, m_name{ name }
 	{
 		if (hp <= 0.0)
 			m_hp = 100.0;
@@ -31,7 +32,8 @@ public:
 			m_hp = hp;
 	}
 	
-	const std::string getName() const;
+	const std::string getTypeString() const;
+	const std::string& getName() const;
 	const double hp() const;
 	void print() const;
 
