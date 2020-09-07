@@ -1,5 +1,5 @@
 #include<iostream>
-#include "../Weapon/weapon.h"
+#include "weapon.h"
 
 void Pause()
 {
