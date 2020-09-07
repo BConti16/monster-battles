@@ -1,7 +1,7 @@
 #include "weapon.h"
 #include<iostream>
 
-//Initializes Weapon class' members
+//Initializes Weapon class' members based on the weapon's type
 void Weapon::init()
 {
 	switch (m_type)
@@ -46,21 +46,25 @@ void Weapon::init()
 	}
 }
 
+//Returns the weapon's base damage
 const double Weapon::damage() const
 {
 	return m_damage;
 }
 
+//Returns the weapon's attack speed (in seconds)
 const double Weapon::attackspeed() const
 {
 	return m_attackspeed;
 }
 
+//Returns the weapon's damage per second (dps)
 const double Weapon::dps() const
 {
 	return m_dps;
 }
 
+//Returns the weapon's type as a string
 const std::string Weapon::getWeaponName() const
 {
 	switch (m_type)
