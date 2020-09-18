@@ -1,9 +1,7 @@
 #ifndef MONSTERGENERATOR_H
 #define MONSTERGENERATOR_H
 
-#include<array>
 #include<random>
-#include<ctime>
 #include<string>
 #include "monster.h"
 #include "weapon.h"
@@ -16,6 +14,7 @@ namespace MonsterGenConstants
 class MonsterGenerator
 {
 public:
+	static int getRandomNumber(int min, int max, std::mt19937& mt);
 	static Monster generateRandomMonster(std::mt19937& mt);
 };
 

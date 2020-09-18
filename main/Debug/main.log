@@ -1,2 +1,6 @@
-﻿  main.cpp
+﻿  monstergenerator.cpp
+C:\Users\brett\source\repos\monster-battles\Monster\MonsterGenerator\monstergenerator.cpp(27,121): warning C4244: 'argument': conversion from 'const double' to 'int', possible loss of data
+C:\Users\brett\source\repos\monster-battles\Monster\MonsterGenerator\monstergenerator.cpp(27,83): warning C4244: 'argument': conversion from 'const double' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
   main.vcxproj -> C:\Users\brett\source\repos\monster-battles\main\Debug\main.exe
