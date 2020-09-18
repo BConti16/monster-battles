@@ -59,5 +59,12 @@ bool Monster::isDead() const
 //This monster attacks the monster specified by the argument, reducing it's health according to the weapon held
 void Monster::attack(Monster& m)
 {
+	if (this == &m)
+	{
+		std::cout << getName() << " cannot attack itself!\n";
+		return;
+	}
 
+	std::cout << getName() << " attacks " << m.getName() << " for " << m_weapon.dps() << " damage!\n";
+	m.reduceHealth(this->m_weapon.dps());
 }
