@@ -4,6 +4,7 @@
   <PropertyGroup Label="UserMacros">
     <Weapon_Directory>C:\Users\brett\source\repos\monster-battles\Weapon\</Weapon_Directory>
     <Monster_Directory>C:\Users\brett\source\repos\monster-battles\Monster\Monster\</Monster_Directory>
+    <MonsterGenerator_Directory>C:\Users\brett\source\repos\monster-battles\Monster\MonsterGenerator\</MonsterGenerator_Directory>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
@@ -13,6 +14,9 @@
     </BuildMacro>
     <BuildMacro Include="Monster_Directory">
       <Value>$(Monster_Directory)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MonsterGenerator_Directory">
+      <Value>$(MonsterGenerator_Directory)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>
