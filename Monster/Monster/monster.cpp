@@ -42,7 +42,12 @@ void Monster::print() const
 //Reduces the monster's health by the amount specified in the argument
 void Monster::reduceHealth(double damage)
 {
+	if (this->isDead())
+	{
+		return;
+	}
 
+	m_hp -= damage;
 }
 
 //Returns true if the monster's health has reached or fallen below 0.0, and false otherwise

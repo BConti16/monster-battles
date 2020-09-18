@@ -37,7 +37,10 @@ public:
 	const double hp() const;
 	void print() const;
 
+private: //Only called internally by Monster::attack
 	void reduceHealth(double damage);
+
+public:
 	bool isDead() const;
 	void attack(Monster& m);
 
