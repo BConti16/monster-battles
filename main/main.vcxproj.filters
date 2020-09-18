@@ -21,9 +21,15 @@
     <ClCompile Include="..\Weapon\weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Monster\Monster\monster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Weapon\weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Monster\Monster\monster.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
