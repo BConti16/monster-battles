@@ -4,6 +4,13 @@
 #include<string>
 #include "weapon.h"
 
+namespace MonsterConstants
+{
+	inline constexpr double max_monster_health{ 800.0 };
+	inline constexpr double min_monster_health{ 500.0 };
+	inline constexpr double default_monster_health{ 650.0 };
+}
+
 class Monster
 {
 public:
@@ -27,9 +34,21 @@ public:
 	Monster(const Type& type, const std::string& name, const Weapon::Type& weapon, double hp) : m_type{ type }, m_name{ name }, m_weapon{ Weapon(weapon) }
 	{
 		if (hp <= 0.0)
-			m_hp = 650.0; //default health if invalid amount passed in
+		{
+			m_hp = MonsterConstants::default_monster_health; //default health if invalid amount passed in
+		}
+		else if (hp > MonsterConstants::max_monster_health)
+		{
+			m_hp = MonsterConstants::max_monster_health; //set to the limit health if upper bound is exceeded
+		}
+		else if (hp < MonsterConstants::min_monster_health)
+		{
+			m_hp = MonsterConstants::min_monster_health; //set to limit health if lower bound is reached
+		}
 		else
+		{
 			m_hp = hp;
+		}
 	}
 
 	~Monster() = default;
