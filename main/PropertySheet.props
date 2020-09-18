@@ -5,6 +5,7 @@
     <Weapon_Directory>C:\Users\brett\source\repos\monster-battles\Weapon\</Weapon_Directory>
     <Monster_Directory>C:\Users\brett\source\repos\monster-battles\Monster\Monster\</Monster_Directory>
     <MonsterGenerator_Directory>C:\Users\brett\source\repos\monster-battles\Monster\MonsterGenerator\</MonsterGenerator_Directory>
+    <MonsterBattle_Directory>C:\Users\brett\source\repos\monster-battles\MonsterBattle\</MonsterBattle_Directory>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
@@ -17,6 +18,9 @@
     </BuildMacro>
     <BuildMacro Include="MonsterGenerator_Directory">
       <Value>$(MonsterGenerator_Directory)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MonsterBattle_Directory">
+      <Value>$(MonsterBattle_Directory)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

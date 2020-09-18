@@ -76,7 +76,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(Monster_Directory);$(Weapon_Directory);$(MonsterGenerator_Directory);$(IncludePath)</IncludePath>
+    <IncludePath>$(Monster_Directory);$(Weapon_Directory);$(MonsterGenerator_Directory);$(MonsterBattle_Directory);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -146,12 +146,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\MonsterBattle\monsterbattle.cpp" />
     <ClCompile Include="..\Monster\MonsterGenerator\monstergenerator.cpp" />
     <ClCompile Include="..\Monster\Monster\monster.cpp" />
     <ClCompile Include="..\Weapon\weapon.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\MonsterBattle\monsterbattle.h" />
     <ClInclude Include="..\Monster\MonsterGenerator\monstergenerator.h" />
     <ClInclude Include="..\Monster\Monster\monster.h" />
     <ClInclude Include="..\Weapon\weapon.h" />
