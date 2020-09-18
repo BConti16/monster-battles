@@ -48,14 +48,7 @@ void Monster::reduceHealth(double damage)
 //Returns true if the monster's health has reached or fallen below 0.0, and false otherwise
 bool Monster::isDead() const
 {
-	if (m_hp <= 0.0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return m_hp <= 0.0;
 }
 
 //This monster attacks the monster specified by the argument, reducing it's health according to the weapon held
