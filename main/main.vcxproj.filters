@@ -24,12 +24,18 @@
     <ClCompile Include="..\Monster\Monster\monster.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Monster\MonsterGenerator\monstergenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Weapon\weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Monster\Monster\monster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Monster\MonsterGenerator\monstergenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
