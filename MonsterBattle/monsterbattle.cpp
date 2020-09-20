@@ -5,12 +5,19 @@
 #include<random>
 #include<string>
 
+void MonsterBattle::Pause()
+{
+	std::cout << "\nPress enter to continue... ";
+	std::string ans{};
+	std::getline(std::cin, ans);
+}
+
 void MonsterBattle::beginMessage(const Monster& m1, const Monster& m2)
 {
 	std::cout << "Introducing our two combatants:\n";
 	std::cout << "\nCombatant One: "; m1.print();
 	std::cout << "Combatant Two: "; m2.print();
-	std::cout << "\nLet the battle commence!\n";
+	std::cout << "\nLet the battle commence!\n\n";
 }
 
 void MonsterBattle::printWinner(const Monster& m1, const Monster& m2)
@@ -46,6 +53,8 @@ Monster& MonsterBattle::Battle(Monster& m1, Monster& m2, std::mt19937& mt)
 		m2.attack(m1, mt);
 	}
 
+	Pause();
+
 	int turn{ 1 };
 
 	//battle loop. Ends when either monster dies
@@ -53,41 +62,43 @@ Monster& MonsterBattle::Battle(Monster& m1, Monster& m2, std::mt19937& mt)
 	{
 		if (turn == 1 && m1TurnCnt == 0) //First turn and m1 hasn't attacked yet (m2 went first)
 		{
+			std::cout << '\n';
 			m1.attack(m2, mt);
 			m1TurnCnt++;
 			m2.attack(m1, mt);
+			std::cout << '\n';
 			m2TurnCnt++;
 			turn++;
-			continue;
 		}
 		else if (turn == 1 && m2TurnCnt == 0) //First turn and m2 hasn't attacked yet (m1 went first)
 		{
+			std::cout << '\n';
 			m2.attack(m1, mt);
 			m2TurnCnt++;
 			m1.attack(m2, mt);
+			std::cout << '\n';
 			m1TurnCnt++;
 			turn++;
-			continue;
 		}
 		else if (m1TurnCnt < m2TurnCnt) //If m2 went first, m1 will be attacking first for the rest of the battle
 		{
 			m1.attack(m2, mt);
 			m1TurnCnt++;
 			m2.attack(m1, mt);
+			std::cout << '\n';
 			m2TurnCnt++;
 			turn++;
-			continue;
 		}
 		else //If m1 went first, m2 will be attacking first for the rest of the battle
 		{
 			m2.attack(m1, mt);
 			m2TurnCnt++;
 			m1.attack(m2, mt);
+			std::cout << '\n';
 			m1TurnCnt++;
 			turn++;
-			continue;
 		}
-
+		Pause();
 	}
 
 	//Print the winner of the battle
