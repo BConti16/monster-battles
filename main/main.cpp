@@ -5,34 +5,23 @@
 #include "weapon.h"
 #include "monster.h"
 #include "monstergenerator.h"
-
-void Pause()
-{
-	std::cout << "\nPress enter to continue... ";
-	std::string ans{};
-	std::getline(std::cin, ans);
-}
+#include "monsterbattle.h"
 
 int main()
 {
 	//Define and seed random number generator
 	std::mt19937 mt{ static_cast<std::mt19937::result_type>(std::time(nullptr)) };
 
-	Weapon club{ Weapon::Type::club };
-	club.print();
+	Monster m1{ MonsterGenerator::generateRandomMonster(mt) };
+	Monster m2{ MonsterGenerator::generateRandomMonster(mt) };
 
-	std::cout << '\n';
+	while (m1.getName() == m2.getName())
+	{
+		m2 = MonsterGenerator::generateRandomMonster(mt);
+	}
 
-	std::cout << "Manual Monster\n";
-	Monster demon{ Monster::Type::demon, "Dracula", Weapon::Type::claws, 600.0 };
-	demon.print();
+	MonsterBattle::Battle(m1, m2, mt);
 
-	std::cout << '\n';
-
-	std::cout << "Random Monster\n";
-	Monster m{ MonsterGenerator::generateRandomMonster(mt) };
-	m.print();
-
-	Pause();
+	MonsterBattle::Pause();
 	return 0;
 }
