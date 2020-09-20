@@ -2,6 +2,11 @@
 #define WEAPON_H
 #include<string>
 
+namespace WeaponConstants
+{
+	inline constexpr double critical_hit_multiplier{ 1.12 };
+}
+
 class Weapon
 {
 public:

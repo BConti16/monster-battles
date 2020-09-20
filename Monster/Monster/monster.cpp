@@ -1,4 +1,6 @@
 #include "monster.h"
+#include "weapon.h"
+#include "monstergenerator.h"
 #include<iostream>
 
 //Returns the monster's type as a string for printing
@@ -57,7 +59,7 @@ bool Monster::isDead() const
 }
 
 //This monster attacks the monster specified by the argument, reducing it's health according to the weapon held
-void Monster::attack(Monster& m)
+void Monster::attack(Monster& m, std::mt19937& mt)
 {
 	if (this == &m)
 	{
@@ -65,6 +67,19 @@ void Monster::attack(Monster& m)
 		return;
 	}
 
-	std::cout << getName() << " attacks " << m.getName() << " for " << m_weapon.dps() << " damage!\n";
-	m.reduceHealth(this->m_weapon.dps());
+	//20% chance for a critical hit
+	static int criticalHitChance{ 20 };
+	double damageDealt;
+	if (MonsterGenerator::getRandomNumber(1, 100, mt) <= criticalHitChance)
+	{
+		std::cout << "It's a critical hit!!\n";
+		damageDealt = this->m_weapon.dps() * WeaponConstants::critical_hit_multiplier;
+	}
+	else
+	{
+		damageDealt = this->m_weapon.dps();
+	}
+
+	std::cout << getName() << " attacks " << m.getName() << " for " << damageDealt << " damage!\n";
+	m.reduceHealth(damageDealt);
 }

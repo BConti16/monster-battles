@@ -2,6 +2,7 @@
 #define MONSTER_H
 
 #include<string>
+#include<random>
 #include "weapon.h"
 
 namespace MonsterConstants
@@ -63,7 +64,7 @@ private: //Only called internally by Monster::attack
 
 public:
 	bool isDead() const;
-	void attack(Monster& m);
+	void attack(Monster& m, std::mt19937& mt);
 
 };
 
