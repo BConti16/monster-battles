@@ -67,8 +67,16 @@ void Monster::attack(Monster& m, std::mt19937& mt)
 		return;
 	}
 
+	//30% chance to miss the attack
+	static const int missChance{ 30 };
+	if (MonsterGenerator::getRandomNumber(1, 100, mt) <= missChance)
+	{
+		std::cout << getName() << " missed!\n";
+		return;
+	}
+
 	//20% chance for a critical hit
-	static int criticalHitChance{ 20 };
+	static const int criticalHitChance{ 20 };
 	double damageDealt;
 	if (MonsterGenerator::getRandomNumber(1, 100, mt) <= criticalHitChance)
 	{
