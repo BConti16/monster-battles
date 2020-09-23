@@ -59,6 +59,7 @@ Monster& MonsterBattle::Battle(Monster& m1, Monster& m2, std::mt19937& mt)
 		m2.attack(m1, mt);
 	}
 
+	std::cout << '\n';
 	MonsterBattle::displayHealth(m1, m2);
 	MonsterBattle::Pause();
 
