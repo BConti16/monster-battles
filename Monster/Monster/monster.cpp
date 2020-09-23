@@ -70,6 +70,10 @@ void Monster::attack(Monster& m, std::mt19937& mt)
 		return;
 	}
 
+	//If attacker is currently dead, they can't attack
+	if (this->isDead())
+		return;
+
 	//30% chance to miss the attack
 	static const int missChance{ 30 };
 	if (MonsterGenerator::getRandomNumber(1, 100, mt) <= missChance)
