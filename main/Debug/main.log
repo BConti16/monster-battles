@@ -1,5 +1,2 @@
-﻿  monster.cpp
-  main.cpp
-  Generating Code...
-  LINK : C:\Users\brett\source\repos\monster-battles\main\Debug\main.exe not found or not built by the last incremental link; performing full link
+﻿  monsterbattle.cpp
   main.vcxproj -> C:\Users\brett\source\repos\monster-battles\main\Debug\main.exe

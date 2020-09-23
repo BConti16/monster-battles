@@ -20,6 +20,12 @@ void MonsterBattle::beginMessage(const Monster& m1, const Monster& m2)
 	std::cout << "\nLet the battle commence!\n\n";
 }
 
+void MonsterBattle::displayHealth(const Monster& m1, const Monster& m2)
+{
+	std::cout << m1.getName() << ": Health - " << m1.hp() << '\n';
+	std::cout << m2.getName() << ": Health - " << m2.hp() << '\n';
+}
+
 void MonsterBattle::printWinner(const Monster& m1, const Monster& m2)
 {
 	//Generate the victory message based on whether or not m1 is dead
@@ -53,7 +59,8 @@ Monster& MonsterBattle::Battle(Monster& m1, Monster& m2, std::mt19937& mt)
 		m2.attack(m1, mt);
 	}
 
-	Pause();
+	MonsterBattle::displayHealth(m1, m2);
+	MonsterBattle::Pause();
 
 	int turn{ 1 };
 
@@ -98,7 +105,8 @@ Monster& MonsterBattle::Battle(Monster& m1, Monster& m2, std::mt19937& mt)
 			m1TurnCnt++;
 			turn++;
 		}
-		Pause();
+		MonsterBattle::displayHealth(m1, m2);
+		MonsterBattle::Pause();
 	}
 
 	//Print the winner of the battle
