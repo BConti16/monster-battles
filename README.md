@@ -12,9 +12,9 @@
   - Damage
   - Attack speed
   - DPS
-- Defense*
+- Defense**
 
-* The monster's *effective* defense `= defense * a reduction constant` to keep things balanced
+** The monster's *effective* defense `= defense * a reduction constant` to keep things balanced
 
 --------------------------------------------------------------------------
 Written in **C++** using **VisualStudio2019**
