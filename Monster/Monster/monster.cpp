@@ -41,7 +41,7 @@ const double Monster::hp() const
 //Prints the monster's traits to the console
 void Monster::print() const
 {
-	std::cout << getName() << " the " << getTypeString() << ": Health - " << m_hp << ", Weapon - " << m_weapon.getWeaponName() << ", DPS - " << m_weapon.dps() << '\n';
+	std::cout << getName() << " the " << getTypeString() << ": Health - " << m_hp << ", Defense - " << m_defense << ", Weapon - " << m_weapon.getWeaponName() << ", DPS - " << m_weapon.dps() << '\n';
 }
 
 //Reduces the monster's health by the amount specified in the argument
@@ -94,6 +94,8 @@ void Monster::attack(Monster& m, std::mt19937& mt)
 	{
 		damageDealt = this->m_weapon.dps();
 	}
+
+	damageDealt -= (m.m_defense * MonsterConstants::defense_reduc_const); //reduce damage dealt by the attacked monster's effective defense
 
 	std::cout << getName() << " attacks " << m.getName() << " for " << damageDealt << " damage!\n";
 	m.reduceHealth(damageDealt);
