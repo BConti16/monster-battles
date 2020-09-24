@@ -10,6 +10,8 @@ namespace MonsterConstants
 	inline constexpr double max_monster_health{ 800.0 };
 	inline constexpr double min_monster_health{ 500.0 };
 	inline constexpr double default_monster_health{ 650.0 };
+	inline constexpr double min_defense{ 100.0 };
+	inline constexpr double defense_reduc_const{ 0.15 };
 }
 
 class Monster
@@ -30,6 +32,7 @@ private:
 	std::string m_name;
 	Weapon m_weapon;
 	double m_hp;
+	double m_defense;
 
 public:
 	Monster(const Type& type, const std::string& name, const Weapon::Type& weapon, double hp) : m_type{ type }, m_name{ name }, m_weapon{ Weapon(weapon) }
@@ -50,6 +53,8 @@ public:
 		{
 			m_hp = hp;
 		}
+
+		m_defense = (MonsterConstants::max_monster_health - m_hp <= MonsterConstants::min_defense) ? MonsterConstants::min_defense : (MonsterConstants::max_monster_health - m_hp);
 	}
 
 	~Monster() = default;
@@ -67,5 +72,4 @@ public:
 	void attack(Monster& m, std::mt19937& mt);
 
 };
-
 #endif
