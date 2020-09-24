@@ -30,12 +30,10 @@ const std::string& Monster::getName() const
 }
 
 //Returns the monster's current health points (hp)
+//If less than 0 hp, just return 0 (for neatness)
 const double Monster::hp() const
 {
-	if (m_hp <= 0.0)
-		return 0.0;
-	else
-		return m_hp;
+	return (m_hp <= 0.0) ? 0.0 : m_hp;
 }
 
 //Prints the monster's traits to the console
