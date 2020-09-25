@@ -7,6 +7,7 @@
 - Force the winner of the last fight back into the arena with a new monster
 - Go until you just can't anymore!
 
+--------------------------------------------------------------------------
 **A monster's attributes are:**
 - Name
 - Type (Race)
