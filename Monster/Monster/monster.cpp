@@ -98,3 +98,14 @@ void Monster::attack(Monster& m, std::mt19937& mt)
 	std::cout << getName() << " attacks " << m.getName() << " for " << damageDealt << " damage!\n";
 	m.reduceHealth(damageDealt);
 }
+
+void Monster::setHealth(double health)
+{
+	m_hp = health;
+}
+
+//Static method to reset a monster's health back to its original max value
+void Monster::invigorate(Monster& m)
+{
+	m.setHealth(m.m_maxhp);
+}
