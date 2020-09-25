@@ -36,7 +36,7 @@ void MonsterBattle::printWinner(const Monster& m1, const Monster& m2)
 
 bool MonsterBattle::nextFight()
 {
-	std::cout << "Would you like to see another fight? (yes/no) ";
+	std::cout << "\nWould you like to see another fight? (yes/no) ";
 	std::string ans{};
 	do
 	{

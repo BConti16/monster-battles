@@ -20,7 +20,18 @@ int main()
 		m2 = MonsterGenerator::generateRandomMonster(mt);
 	}
 
-	MonsterBattle::Battle(m1, m2, mt);
+	m1 = MonsterBattle::Battle(m1, m2, mt);
+
+	bool again{ MonsterBattle::nextFight() };
+	while (again)
+	{
+		m2 = MonsterGenerator::generateRandomMonster(mt);
+		while (m1.getName() == m2.getName())
+			m2 = MonsterGenerator::generateRandomMonster(mt);
+		m1 = MonsterBattle::Battle(m1, m2, mt);
+
+		again = MonsterBattle::nextFight();
+	}
 
 	MonsterBattle::Pause();
 	return 0;
