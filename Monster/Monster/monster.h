@@ -33,6 +33,7 @@ private:
 	Weapon m_weapon;
 	double m_hp;
 	double m_defense;
+	double m_maxhp;
 
 public:
 	Monster(const Type& type, const std::string& name, const Weapon::Type& weapon, double hp) : m_type{ type }, m_name{ name }, m_weapon{ Weapon(weapon) }
@@ -53,6 +54,7 @@ public:
 		{
 			m_hp = hp;
 		}
+		m_maxhp = m_hp;
 
 		m_defense = (MonsterConstants::max_monster_health - m_hp <= MonsterConstants::min_defense) ? MonsterConstants::min_defense : (MonsterConstants::max_monster_health - m_hp);
 	}
@@ -66,10 +68,12 @@ public:
 
 private: //Only called internally by Monster::attack
 	void reduceHealth(double damage);
+	void setHealth(double health);
 
 public:
 	bool isDead() const;
 	void attack(Monster& m, std::mt19937& mt);
+	static void invigorate(Monster& m);
 
 };
 #endif

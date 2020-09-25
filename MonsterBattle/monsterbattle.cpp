@@ -34,6 +34,24 @@ void MonsterBattle::printWinner(const Monster& m1, const Monster& m2)
 	std::cout << victoryMessage;
 }
 
+bool MonsterBattle::nextFight()
+{
+	std::cout << "\nWould you like to see another fight? (yes/no) ";
+	std::string ans{};
+	do
+	{
+		std::getline(std::cin, ans);
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
+		}
+	} while ((ans != "yes" && ans != "Yes" && ans != "y" && ans != "Y") && (ans != "no" && ans != "No" && ans != "n" && ans != "N"));
+
+	return (ans == "yes" || ans == "Yes" || ans == "y" || ans == "Y");
+
+}
+
 //Static function to carry out battles between two monsters
 //Returns a reference to the monster that wins
 Monster& MonsterBattle::Battle(Monster& m1, Monster& m2, std::mt19937& mt)
